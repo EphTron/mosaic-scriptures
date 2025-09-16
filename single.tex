@@ -1,0 +1,55 @@
+\documentclass[12pt, openany]{article}  % Use 'article' class for an article-like format
+
+\usepackage{lettrine}   % Add drop caps to chapter openings
+\usepackage{graphicx}
+\usepackage{ebgaramond}
+\usepackage[ngerman]{babel}  % Use German formatting and hyphenation
+
+\usepackage[center,sc]{titlesec}  % Format section titles
+
+% Custom article-specific settings
+\usepackage{geometry}
+\geometry{
+    paperheight=11in,      % Adjust height for article format
+    paperwidth=8.5in,      % Adjust width for article format
+    top=1in, bottom=1in,
+    left=1in, right=1in
+}
+
+% Define \Chapter to dynamically adapt to document class
+% and allow suppression of the chapter title in article format
+\newcommand{\Chapter}[1]{%
+  \ifdefined\chapter
+    \chapter{#1} % Use \chapter if defined (e.g., in book class)
+  \else
+    
+  \fi
+}
+
+% Header and footer settings
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\itshape \booktitle}
+\rhead{\itshape \authorname}
+\cfoot{\thepage}
+
+% Custom quote environment
+\newenvironment{itquote}
+  {\begin{quote}\itshape}
+  {\end{quote}\ignorespacesafterend}
+
+% Title and author information
+\newcommand{\authorname}{Ephraim Schott and Johannes Hartmann}  % Author of the story
+\newcommand{\booktitle}{Treibholz}        % Article title
+
+\title{\booktitle}
+\author{\authorname}
+\date{20.12.2024}  % No date shown
+
+\begin{document}
+\maketitle  % Print the title and author
+
+\input{Kapitel/Treibholz}  % Include the story content
+
+\end{document}

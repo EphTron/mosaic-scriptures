@@ -1,0 +1,44 @@
+\documentclass[10pt,openany]{book}      % paper size is in preamble.sty
+
+%\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%% BOOK INFORMATION %%%%%%%%%%
+%\newcommand{\authornameOne}{Ephraim Schott}
+%\newcommand{\authornameTwo}{Johannes Hartmann}
+%\newcommand{\authornameThree}{Amaya Gallegos}
+\newcommand{\AllAuthors}{Ephraim Schott, Johannes Hartmann, Amaya Gallegos}
+
+\newcommand{\booktitle}{Mosaic Scriptures}
+\newcommand{\subtitle}{Short Stories Scattered Across Time and Space}
+\newcommand{\publisher}{Asbacher Verlag}
+\newcommand{\editionyear}{2024}
+\newcommand{\isbn}{420-8-69-108666-0}   % replace this with your own ISBN
+\title{\booktitle}
+\author{\authorname}
+
+\usepackage{misc/mosaic}
+%\usepackage{misc/options}
+
+\newenvironment{itquote}
+  {\begin{quote}\itshape}
+  {\end{quote}\ignorespacesafterend}
+
+\begin{document}
+\frontmatter
+\input{frontmatter/titlepage}
+\input{frontmatter/copyrightpage}
+%\input{frontmatter/preface}
+\input{frontmatter/tocpage}
+
+\mainmatter
+\pagestyle{fancy}
+
+\input{Kapitel/Treibholz}
+\input{Kapitel/Ohnmacht}
+\input{Kapitel/Schaumkronen}
+\input{Kapitel/Entscheidungen}
+\input{Kapitel/Schurken}
+
+
+\end{document}

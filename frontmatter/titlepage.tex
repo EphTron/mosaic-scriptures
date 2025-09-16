@@ -1,0 +1,37 @@
+\pagestyle{empty}
+
+% Half title page
+{
+\centering
+
+~
+
+\vspace{24pt}
+{\scshape\Huge \booktitle \par}
+}
+\cleardoublepage
+
+% Title page
+\begin{titlepage}
+	\centering
+	
+	~
+	
+	\vspace{24pt}
+	{\scshape\Huge \booktitle\par}
+	\vspace{6pt}
+	{\scshape\large \subtitle\par}
+	\vspace{\stretch{1.25}}
+	{\itshape\large by\par}
+	\vspace{3pt}
+    % Dynamically insert authors
+    {\itshape\Large \FormatAuthorsForTitle{\AllAuthors}\par}
+	
+	%{\itshape\Large \authornameOne\par}
+    %\vspace{5pt}
+    %{\itshape\large and\par}
+    %\vspace{4.5pt}
+    %{\itshape\Large \authornameTwo\par}
+	\vspace{\stretch{6}}
+	{\large \publisher\par}
+\end{titlepage}

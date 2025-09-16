@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+
+\pagestyle{fancy}
+
+% Define macro to format authors for headers (replace commas with " and " and add line breaks)
+\newcommand{\FormatHeaderAuthors}[1]{%
+    \def\formatted{} % Initialize empty storage
+    \renewcommand{\do}[1]{%
+        \ifx\formatted\empty
+            \gdef\formatted{##1} % First author (no separator)
+        \else
+            \gdef\formatted{\formatted \\ and \\ ##1} % Add line breaks instead of spaces
+        \fi
+    }%
+    \expandafter\docsvlist\expandafter{#1}%
+    \formatted % Output formatted author list
+}
+
+% Define CurrentAuthors
+\newcommand{\CurrentAuthors}{Ephraim, Tony, Nicole}
+
+% Set header with formatted authors (shortstack allows line breaks)
+\fancyhead[CE]{\itshape \shortstack[l]{\FormatHeaderAuthors{\CurrentAuthors}}}
+
+\begin{document}
+\shortstack[l]
+\chapter{Introduction}
+
+This is an example chapter with the authors formatted in the header.
+
+\end{document}
